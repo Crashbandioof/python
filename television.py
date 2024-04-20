@@ -26,6 +26,7 @@ class Television:
             self.muted = False
         else:
             self.muted = True
+        
     def channel_up(self):
         '''
         Increases the channel by one if the channel isn't at the max channel
