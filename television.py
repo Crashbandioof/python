@@ -28,7 +28,7 @@ class Television:
         Unmutes the TV if it's muted
         '''
         if self.__status:
-            if self.muted == True:
+            if self.__muted == True:
                 self.__muted = False
             else:
                 self.__muted = True
