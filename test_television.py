@@ -26,8 +26,10 @@ class Test:
         self.tvl.power()
         assert self.tvl.__str__() == 'Volume = 0' #Off and muted
 
+        self.tvl.power()
         self.tvl.mute()
-        assert self.tvl.__str__() == 'Power = True, Channel = 0, Volume = 1'#off and unmuted
+        self.tvl.power()
+        assert self.tvl.__str__() == 'Power = False, Channel = 0, Volume = 1'#off and unmuted
 
     def test_channel_up(self):
         self.tvl.channel_up()
@@ -81,5 +83,5 @@ class Test:
 
         self.tvl.volume_down()
         self.tvl.volume_down()
-        assert self.tvl.__str__() == 'Power = True, Channel = 0, Volume = 1'#vol decreased past min
+        assert self.tvl.__str__() == 'Power = True, Channel = 0, Volume = 0'#vol decreased past min
 
